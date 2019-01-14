@@ -6,7 +6,6 @@ function createPerson4Request(url, id, propertyName) {
 
   function changeWhat() {
     let response = JSON.parse(this.responseText);
-    console.log(response);
     document.querySelector(id.concat(propertyName)).innerHTML = response.name;
     changeWorld(response.homeworld);
   }
@@ -20,7 +19,6 @@ function createPerson14Request(url, id, propertyName) {
 
   function changeWhat() {
     let response = JSON.parse(this.responseText);
-    console.log(response);
     document.querySelector(id.concat(propertyName)).innerHTML = response.name;
     changeSpecies(response.species[0]);
   }
@@ -47,7 +45,6 @@ function changeSpecies(url) {
 
   function setSpecies() {
     let speciesResponse = JSON.parse(this.responseText);
-    console.log(speciesResponse);
     document.querySelector('#person14Species').innerHTML = speciesResponse.name;
   }
 }
@@ -60,7 +57,6 @@ function createFilmListRequest(url) {
 
   function setFilms() {
     let filmsResponse = JSON.parse(this.responseText);
-    console.log(filmsResponse.results);
     for (let i = 0; i < filmsResponse.results.length; i++) {
       let li = document.createElement('li');
       li.className = 'film';
